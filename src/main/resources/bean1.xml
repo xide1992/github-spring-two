@@ -4,6 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--    ioc入门-->
+    <!--    id：属性值任意命名，但是不能包含特殊符号，根据id可以得到配置对象-->
+    <!--    class：创建对象所在类的全路径-->
+    <!--    name:功能和id一样，但是可以包含特殊符号，-->
+    <!--    scope：默认singleton   singleton：单例模式，每次获取都返回同一个实例，相对于同一个IOC容器而言。
+                                        prototype：原型模式，每次获取返回不同实例，创建后的生命周期不再由IOC容器管理,destroy-method不起作用。-->
     <bean id="user" class="com.yy.exercisespring.service.ioctest.User"></bean>
 
 
