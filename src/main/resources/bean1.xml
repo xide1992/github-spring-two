@@ -3,6 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.yy.exercisespring.service.User"></bean>
+    <!--    ioc入门-->
+    <bean id="user" class="com.yy.exercisespring.service.ioctest.User"></bean>
+
+
+    <!--    使用静态工厂创建对象-->
+    <bean id="staticFactoryUser" class="com.yy.exercisespring.service.ioctest.StaticFactoryUser" factory-method="getUser"></bean>
+
+    <!--    使用实例工厂创建对象-->
+    <!--    创建工厂对象-->
+    <bean id="factoryUser" class="com.yy.exercisespring.service.ioctest.FactoryUser"></bean>
+    <bean id="userBean" factory-bean="factoryUser" factory-method="getUser"></bean>
 
 </beans>
