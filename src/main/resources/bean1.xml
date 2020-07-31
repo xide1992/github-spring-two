@@ -15,7 +15,11 @@
         <!--<constructor-arg name="userName" value="小王王"></constructor-arg>-->
         <!--set方法注入-->
         <property name="userName" value="小set"></property>
+        <!--注入属性-->
+        <property name="userDao" ref="useDaoBean"></property>
     </bean>
+
+    <bean id="useDaoBean" class="com.yy.exercisespring.dao.ioctest.UserDao"></bean>
 
 
     <!--    使用静态工厂创建对象-->

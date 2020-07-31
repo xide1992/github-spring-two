@@ -19,7 +19,7 @@ public class HelloTest {
         //得到配置创建的对象
         User user1 = (User) context.getBean("user");
         System.out.println(user1);
-        user1.sayHello();
+        user1.sayHello111();
 
         User user2 = (User) context.getBean("staticFactoryUser");
         System.out.println(user2);

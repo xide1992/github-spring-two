@@ -1,5 +1,7 @@
 package com.yy.exercisespring.service.ioctest;
 
+import com.yy.exercisespring.dao.ioctest.UserDao;
+
 /**
  * @Author: xdz
  * @Descrption:
@@ -8,6 +10,8 @@ package com.yy.exercisespring.service.ioctest;
 public class User {
 
     private String userName;
+
+    private UserDao userDao;
 
     public User() {
         System.out.println("User无产构造方法");
@@ -25,8 +29,17 @@ public class User {
         this.userName = userName;
     }
 
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void sayHello111() {
+        System.out.println("hello111......" + this.userName);
+        this.userDao.sayHello();
+    }
+
     public void sayHello() {
-        System.out.println("hello......" + this.userName);
+        System.out.println("hello22......" + this.userName);
     }
 
     public void init() {
