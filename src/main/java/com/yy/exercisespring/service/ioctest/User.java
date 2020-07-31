@@ -7,12 +7,26 @@ package com.yy.exercisespring.service.ioctest;
  */
 public class User {
 
+    private String userName;
+
     public User() {
         System.out.println("User无产构造方法");
     }
 
+    public User(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public void sayHello() {
-        System.out.println("hello......");
+        System.out.println("hello......" + this.userName);
     }
 
     public void init() {
@@ -22,4 +36,6 @@ public class User {
     public void destory() {
         System.out.println("user---destory");
     }
+
+
 }

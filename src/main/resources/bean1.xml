@@ -9,7 +9,13 @@
     <!--    name:功能和id一样，但是可以包含特殊符号，-->
     <!--    scope：默认singleton   singleton：单例模式，每次获取都返回同一个实例，相对于同一个IOC容器而言。
                                         prototype：原型模式，每次获取返回不同实例，创建后的生命周期不再由IOC容器管理,destroy-method不起作用。-->
-    <bean id="user" class="com.yy.exercisespring.service.ioctest.User" scope="singleton" init-method="init" destroy-method="destory"></bean>
+    <!--<bean id="user" class="com.yy.exercisespring.service.ioctest.User" scope="singleton" init-method="init" destroy-method="destory"></bean>-->
+    <bean id="user" class="com.yy.exercisespring.service.ioctest.User" scope="singleton" init-method="init" destroy-method="destory">
+        <!--使用有参构造注入-->
+        <!--<constructor-arg name="userName" value="小王王"></constructor-arg>-->
+        <!--set方法注入-->
+        <property name="userName" value="小set"></property>
+    </bean>
 
 
     <!--    使用静态工厂创建对象-->
