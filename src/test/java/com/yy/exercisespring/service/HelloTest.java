@@ -20,6 +20,7 @@ public class HelloTest {
         User user1 = (User) context.getBean("user");
         System.out.println(user1);
         user1.sayHello111();
+        user1.output();
 
         User user2 = (User) context.getBean("staticFactoryUser");
         System.out.println(user2);
@@ -28,6 +29,11 @@ public class HelloTest {
         User user3 = (User) context.getBean("userBean");
         System.out.println(user3);
         user3.sayHello();
+
+        User userP = (User) context.getBean("userP");
+        System.out.println(userP);
+        userP.sayHello();
+
 
         ((ClassPathXmlApplicationContext) context).close();
     }

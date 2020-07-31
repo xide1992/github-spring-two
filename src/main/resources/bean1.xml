@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--    ioc入门-->
@@ -15,11 +16,42 @@
         <!--<constructor-arg name="userName" value="小王王"></constructor-arg>-->
         <!--set方法注入-->
         <property name="userName" value="小set"></property>
-        <!--注入属性-->
+        <!--set方法注入属性-->
         <property name="userDao" ref="useDaoBean"></property>
+        <!--set方法注入数组-->
+        <property name="arrs">
+            <list>
+                <value>小一</value>
+                <value>小二</value>
+            </list>
+        </property>
+        <!--set方法注入list-->
+        <property name="arrlist">
+            <list>
+                <value>小三</value>
+                <value>小四</value>
+            </list>
+        </property>
+        <!--set方法注入map-->
+        <property name="map">
+            <map>
+                <entry key="one" value="oneone"></entry>
+                <entry key="two" value="twotwo"></entry>
+            </map>
+        </property>
+        <!--set方法注入properties-->
+        <property name="properties">
+            <props>
+                <prop key="oneprop">oneoneprop</prop>
+                <prop key="twoprop">twotwoprop</prop>
+            </props>
+        </property>
     </bean>
 
     <bean id="useDaoBean" class="com.yy.exercisespring.dao.ioctest.UserDao"></bean>
+
+    <!--p名称空间注入-->
+    <bean id="userP" class="com.yy.exercisespring.service.ioctest.User" p:userName="p名称空间注入"></bean>
 
 
     <!--    使用静态工厂创建对象-->
