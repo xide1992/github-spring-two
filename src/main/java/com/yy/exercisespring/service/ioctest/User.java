@@ -14,4 +14,12 @@ public class User {
     public void sayHello() {
         System.out.println("hello......");
     }
+
+    public void init() {
+        System.out.println("user---init");
+    }
+
+    public void destory() {
+        System.out.println("user---destory");
+    }
 }

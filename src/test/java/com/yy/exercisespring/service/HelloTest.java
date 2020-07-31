@@ -28,5 +28,7 @@ public class HelloTest {
         User user3 = (User) context.getBean("userBean");
         System.out.println(user3);
         user3.sayHello();
+
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }
