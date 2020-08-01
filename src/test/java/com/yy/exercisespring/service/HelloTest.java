@@ -1,5 +1,6 @@
 package com.yy.exercisespring.service;
 
+import com.yy.exercisespring.service.ioctest.AnnotationUser;
 import com.yy.exercisespring.service.ioctest.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -36,5 +37,15 @@ public class HelloTest {
 
 
         ((ClassPathXmlApplicationContext) context).close();
+    }
+
+    @Test
+    public void AnnotationBeanTest() {
+        //加载spring配置文件,创建对象
+        ApplicationContext context = new ClassPathXmlApplicationContext("annotationBean.xml");
+        //得到配置创建的对象
+        AnnotationUser user1 = (AnnotationUser) context.getBean("AnnotationUser");
+        System.out.println(user1);
+        user1.sayHello();
     }
 }
