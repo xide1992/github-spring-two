@@ -14,4 +14,7 @@
     <context:component-scan base-package="com.yy.exercisespring"></context:component-scan>
     <!--annotation-config只会扫描属性上面的注解-->
     <!--<context:annotation-config></context:annotation-config>-->
+
+    <!--配置文件和注解混合使用，创建对象用配置文件，注入属性用注解的方式进行完成-->
+    <bean id="userhhh" class="com.yy.exercisespring.service.ioctest.User" ></bean>
 </beans>

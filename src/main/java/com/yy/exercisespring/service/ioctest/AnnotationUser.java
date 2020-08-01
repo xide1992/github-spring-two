@@ -22,8 +22,14 @@ public class AnnotationUser {
     //@Resource(name="AnnotationUserBao")// 如果带name，那么必须使用@Service(value="xxx") 中的value   或者不带name
     private AnnotationUserBao annotationUserBao;
 
+    //    @Autowired
+    //@Resource
+    @Resource(name="userhhh")
+    private User user;
+
     public void sayHello() {
         System.out.println("AnnotationUser.................");
         annotationUserBao.sayHello();
+        user.sayHello();
     }
 }
