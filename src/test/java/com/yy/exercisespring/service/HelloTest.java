@@ -40,12 +40,22 @@ public class HelloTest {
     }
 
     @Test
-    public void AnnotationBeanTest() {
+    public void annotationBeanTest() {
         //加载spring配置文件,创建对象
         ApplicationContext context = new ClassPathXmlApplicationContext("annotationBean.xml");
         //得到配置创建的对象
         AnnotationUser user1 = (AnnotationUser) context.getBean("AnnotationUser");
         System.out.println(user1);
         user1.sayHello();
+    }
+
+    @Test
+    public void aopBeanTest() {
+        //加载spring配置文件,创建对象
+        ApplicationContext context = new ClassPathXmlApplicationContext("aopBean.xml");
+        //得到配置创建的对象
+        User user = (User) context.getBean("user");
+        System.out.println(user);
+        user.sayHello();
     }
 }

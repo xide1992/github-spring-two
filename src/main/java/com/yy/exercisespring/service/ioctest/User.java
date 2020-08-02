@@ -65,6 +65,7 @@ public class User {
     }
 
     public void sayHello() {
+        //throw new RuntimeException();
         System.out.println("hello22......" + this.userName);
     }
 
