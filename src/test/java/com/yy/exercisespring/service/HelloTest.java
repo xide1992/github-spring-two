@@ -58,4 +58,14 @@ public class HelloTest {
         System.out.println(user);
         user.sayHello();
     }
+
+    @Test
+    public void aopAnnotationBeanTest() {
+        //加载spring配置文件,创建对象
+        ApplicationContext context = new ClassPathXmlApplicationContext("aopAnnotationBean.xml");
+        //得到配置创建的对象
+        User user = (User) context.getBean("user");
+        System.out.println(user);
+        user.sayHello();
+    }
 }

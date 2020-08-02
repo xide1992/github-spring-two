@@ -25,10 +25,10 @@
             <!--前置通知-->
             <aop:before method="before1" pointcut-ref="pointcut1"></aop:before>
 
-            <!--后置通知-->
+            <!--最终通知,在后置通知之前执行,如果抛出异常也会执行-->
             <aop:after method="after1" pointcut-ref="pointcut1"></aop:after>
 
-            <!--最终通知-->
+            <!--后置通知-->
             <aop:after-returning method="afterReturning1" pointcut-ref="pointcut1"></aop:after-returning>
 
             <!--环绕通知-->
