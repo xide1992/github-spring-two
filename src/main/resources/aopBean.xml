@@ -49,4 +49,13 @@
     </aop:config>
 
 
+    <bean id="globalLogAdvisorAop" class="com.yy.exercisespring.annotation.GlobalLogAdvisorAop"></bean>
+    <aop:config>
+        <!--2.1 配置切入点,切入点:类中实际被增强的方法被称为切入点-->
+        <aop:pointcut id="pointcut1" expression="@annotation(com.yy.exercisespring.annotation.GlobalLog)"/>
+        <!--2.2 配置切面 ,切面:把增强应用到具体方法上面,过程称为切面(把增强应用到切入点的过程)-->
+        <aop:advisor pointcut-ref="pointcut1" advice-ref="globalLogAdvisorAop"/>
+    </aop:config>
+
+
 </beans>

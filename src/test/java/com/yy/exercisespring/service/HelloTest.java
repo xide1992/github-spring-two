@@ -68,4 +68,14 @@ public class HelloTest {
         System.out.println(user);
         user.sayHello();
     }
+
+    @Test
+    public void globalLogBeanTest() {
+        //加载spring配置文件,创建对象
+        ApplicationContext context = new ClassPathXmlApplicationContext("globalLogBean.xml");
+        //得到配置创建的对象
+        AnnotationUser user1 = (AnnotationUser) context.getBean("AnnotationUser");
+        System.out.println(user1);
+        user1.sayHello();
+    }
 }

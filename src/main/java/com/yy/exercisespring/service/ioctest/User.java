@@ -1,6 +1,7 @@
 package com.yy.exercisespring.service.ioctest;
 
 import com.alibaba.fastjson.JSON;
+import com.yy.exercisespring.annotation.GlobalLog;
 import com.yy.exercisespring.dao.ioctest.UserDao;
 
 import java.util.List;
@@ -64,6 +65,7 @@ public class User {
         this.userDao.sayHello();
     }
 
+    @GlobalLog(module = "xdz",category = "xdzCategory",subCategory = "hhh",writeFailureLog = false,writeSuccessLog = false)
     public void sayHello() {
         //throw new RuntimeException();
         System.out.println("hello22......" + this.userName);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--context与context/spring-context.xsd为注解扫描约束-->
+    <!--aop/aop/spring-aop.xsd为aop约束-->
+
+    <!--开启注解扫描（类，方法，属性），如果有多个包可以"com.yy.exercisespring,com.yy.xxx",或者使用父级文件夹-->
+    <context:component-scan base-package="com.yy.exercisespring"></context:component-scan>
+    <!--开启aop操作-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <bean id="userhhh" class="com.yy.exercisespring.service.ioctest.User" ></bean>
+
+</beans>

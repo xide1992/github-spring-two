@@ -1,5 +1,6 @@
 package com.yy.exercisespring.service.ioctest;
 
+import com.yy.exercisespring.annotation.GlobalLog;
 import com.yy.exercisespring.dao.ioctest.AnnotationUserBao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -27,6 +28,7 @@ public class AnnotationUser {
     @Resource(name="userhhh")
     private User user;
 
+    @GlobalLog(module = "xdz",category = "xdzCategory",subCategory = "hhh",writeFailureLog = false,writeSuccessLog = false)
     public void sayHello() {
         System.out.println("AnnotationUser.................");
         annotationUserBao.sayHello();
