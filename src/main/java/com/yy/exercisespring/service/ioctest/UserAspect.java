@@ -1,6 +1,9 @@
 package com.yy.exercisespring.service.ioctest;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
+
+import java.lang.reflect.Method;
 
 public class UserAspect {
 
@@ -20,8 +23,10 @@ public class UserAspect {
 
     public void around1(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("环绕前通知......");
+        MethodSignature methodSignature=(MethodSignature) proceedingJoinPoint.getSignature();
+        Method method=methodSignature.getMethod();
         proceedingJoinPoint.proceed();
-        System.out.println("环绕后通知......");
+        System.out.println("环绕后通知......"+method.getName());
     }
 
     public void ex() {
