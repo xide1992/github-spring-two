@@ -1,6 +1,7 @@
-package com.yy.exercisespring.annotation;
+package com.yy.exercisespring.aspect;
 
 import com.alibaba.fastjson.JSON;
+import com.yy.exercisespring.annotation.GlobalLog;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 

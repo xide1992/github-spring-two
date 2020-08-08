@@ -3,6 +3,7 @@ package com.yy.exercisespring.service.ioctest;
 import com.yy.exercisespring.annotation.GlobalLog;
 import com.yy.exercisespring.dao.ioctest.AnnotationUserBao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,8 @@ import javax.annotation.Resource;
 @Scope("singleton")
 public class AnnotationUser {
 
-    @Autowired  //找AnnotationUserBao方法名
+    @Autowired  //找AnnotationUserBao方法名    自动装配  byType
+    @Qualifier("xdzAnnotationUserBao")//byName /byId
     //@Resource
     //@Resource(name="AnnotationUserBao")// 如果带name，那么必须使用@Service(value="xxx") 中的value   或者不带name
     private AnnotationUserBao annotationUserBao;
