@@ -76,6 +76,6 @@ public class HelloTest {
         //得到配置创建的对象
         AnnotationUser user1 = (AnnotationUser) context.getBean("AnnotationUser");
         System.out.println(user1);
-        user1.sayHello();
+        user1.sayAop(11,22);
     }
 }

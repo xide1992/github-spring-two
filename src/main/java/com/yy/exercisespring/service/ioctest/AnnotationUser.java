@@ -34,4 +34,12 @@ public class AnnotationUser {
         annotationUserBao.sayHello();
         user.sayHello();
     }
+
+    @GlobalLog(module = "xdz",category = "xdzCategory",subCategory = "hhh",writeFailureLog = false,writeSuccessLog = false)
+    public int sayAop(int ii,int jj) {
+//        int  hhh[]=new int[2];
+//        hhh[3]=1231;
+        System.out.println("Annotation....AOP............."+ii+jj);
+        return ii+jj;
+    }
 }

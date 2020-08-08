@@ -15,6 +15,10 @@ public class GlobalLogAdvisorAop implements MethodInterceptor {
 
         GlobalLog globalLogAnnotation = method.getAnnotation(GlobalLog.class);
 
+        System.out.println(methodInvocation.getThis());
+        System.out.println(methodInvocation.getArguments().length);
+        System.out.println(method.getName());
+
         boolean isThrown = false;
         Throwable throwable = null;
         Object value = null;
