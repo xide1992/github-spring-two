@@ -25,9 +25,9 @@ public class AnnotationUser {
     //@Resource(name="AnnotationUserBao")// 如果带name，那么必须使用@Service(value="xxx") 中的value   或者不带name
     private AnnotationUserBao annotationUserBao;
 
-    //    @Autowired
+    @Autowired
     //@Resource
-    @Resource(name="userhhh")
+    //@Resource(name="userhhh")
     private User user;
 
     @GlobalLog(module = "xdz",category = "xdzCategory",subCategory = "hhh",writeFailureLog = false,writeSuccessLog = false)
