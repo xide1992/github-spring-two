@@ -48,4 +48,28 @@ public class SpringMvcController {
         return "success";  // 默认使用了请求转发的跳转方式
     }
 
+
+    @RequestMapping(value = "testRestful/{id}",method = RequestMethod.POST)
+    public String testAdd(@PathVariable("id") Long id) {
+        System.out.println("增"+id);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+    @RequestMapping(value = "testRestful/{id},",method = RequestMethod.DELETE)
+    public String testDelete(@PathVariable("id") Long id) {
+        System.out.println("删"+id);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+    @RequestMapping(value = "testRestful/{id}",method = RequestMethod.PUT)
+    public String testPut(@PathVariable("id") Long id) {
+        System.out.println("改"+id);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+    @RequestMapping(value = "testRestful/{id}",method = RequestMethod.GET)
+    public String testGet(@PathVariable("id") Long id) {
+        System.out.println("查"+id);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
 }

@@ -25,4 +25,14 @@
     <!--/ 拦截所有请求，交给mvc处理  /user:拦截以/user开头的请求 .action:拦截以.action结尾的请求-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <!--使用HiddenHttpMethodFilter过滤器,目的是为了给普通浏览器增加put|delete请求-->
+  <filter>
+    <filter-name>HiddenHttpMethodFilter</filter-name>
+    <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HiddenHttpMethodFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

@@ -23,5 +23,23 @@
 <a href="spring/mvc/welcome4/abc/test"> first mvc welcome4</a> <br>
 <a href="spring/mvc/welcome5/xdz"> first mvc welcome5</a> <br>
 
+<form action="/spring/mvc/testRestful/1234" method="post">
+    <input type="submit" value="add">  <br>
+</form>
+
+<form action="/spring/mvc/testRestful/1234" method="post">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="delete">  <br>
+</form>
+
+<form action="/spring/mvc/testRestful/1234" method="post">
+    <input type="hidden" name="_method" value="PUT"/>
+    <input type="submit" value="change">  <br>
+</form>
+
+<form action="/spring/mvc/testRestful/1234" method="get">
+    <input type="submit" value="search">  <br>
+</form>
+
 </body>
 </html>
