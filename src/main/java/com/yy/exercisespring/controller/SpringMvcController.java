@@ -1,9 +1,7 @@
 package com.yy.exercisespring.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("spring/mvc")//映射
@@ -69,6 +67,22 @@ public class SpringMvcController {
     @RequestMapping(value = "testRestful/{id}",method = RequestMethod.GET)
     public String testGet(@PathVariable("id") Long id) {
         System.out.println("查"+id);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+    @RequestMapping(value = "testParam", method = RequestMethod.GET)
+    public String testParam(@RequestParam("uname") String uname,
+                            @RequestParam(value = "uage", required = false,defaultValue = "23")Integer uage,
+                            @RequestHeader(value = "sdf",required = false)String sdf,
+                            @RequestHeader(value = "Accept-Language",required = false)String language,
+                            @RequestHeader(value = "Cookie",required = false)String cookie,
+                            @CookieValue(value = "JSESSIONID",required = false)String jsessionid) {
+        //String name=request.getParameter("uname");
+        System.out.println("name:" + uname+"age"+uage);
+        System.out.println("sdf:" + sdf);
+        System.out.println("language:" + language);
+        System.out.println("cookie:" + cookie);
+        System.out.println("jsessionid:" + jsessionid);
         return "success";  // 默认使用了请求转发的跳转方式
     }
 

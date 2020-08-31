@@ -41,5 +41,11 @@
     <input type="submit" value="search">  <br>
 </form>
 
+
+<form action="/spring/mvc/testParam" method="get">
+    <input name="uname" type="text">
+    <input type="submit" value="testParam">  <br>
+</form>
+
 </body>
 </html>
