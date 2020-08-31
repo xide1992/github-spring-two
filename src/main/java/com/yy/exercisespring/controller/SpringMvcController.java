@@ -1,5 +1,7 @@
 package com.yy.exercisespring.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.yy.exercisespring.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -83,6 +85,14 @@ public class SpringMvcController {
         System.out.println("language:" + language);
         System.out.println("cookie:" + cookie);
         System.out.println("jsessionid:" + jsessionid);
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+
+    @RequestMapping(value = "testObjectProperties", method = RequestMethod.POST)
+    public String testObjectProperties(Student student) {
+        System.out.println("student:" + JSON.toJSONString(student));
+
         return "success";  // 默认使用了请求转发的跳转方式
     }
 

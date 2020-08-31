@@ -47,5 +47,14 @@
     <input type="submit" value="testParam">  <br>
 </form>
 
+
+<form action="/spring/mvc/testObjectProperties" method="post">
+    name:<input name="name" type="text">
+    age:<input name="age" type="text">
+    homeAddress:<input name="address.homeAddress" type="text">
+    schoolAddress:<input name="address.schoolAddress" type="text">
+    <input type="submit" value="student">  <br>
+</form>
+
 </body>
 </html>
