@@ -53,7 +53,27 @@
     age:<input name="age" type="text">
     homeAddress:<input name="address.homeAddress" type="text">
     schoolAddress:<input name="address.schoolAddress" type="text">
-    <input type="submit" value="student">  <br>
+    <input type="submit" value="testObjectProperties">  <br>
+</form>
+
+<form action="/spring/mvc/testHttpServlet" method="post">
+    name:<input name="name" type="text">
+    age:<input name="age" type="text">
+    homeAddress:<input name="address.homeAddress" type="text">
+    schoolAddress:<input name="address.schoolAddress" type="text">
+    <input type="submit" value="testHttpServlet">  <br>
+</form>
+
+<a href="/spring/mvc/testModelAndView"> first mvc testModelAndView</a> <br>
+<a href="/spring/mvc/testModelMap"> first mvc testModelMap</a> <br>
+<a href="/spring/mvc/testMap"> first mvc testMap</a> <br>
+<a href="/spring/mvc/testModel"> first mvc testModel</a> <br>
+<a href="/spring/mvc/testSessionAttributes"> first mvc testSessionAttributes</a> <br>
+
+
+<form action="/spring/mvc/testModelAttribute" method="get">
+    name:<input name="name" type="text">
+    <input type="submit" value="testModelAttribute">  <br>
 </form>
 
 </body>
