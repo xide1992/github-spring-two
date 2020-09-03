@@ -21,7 +21,7 @@ public class SpringMvcController {
 
     @RequestMapping("welcome")
     public String welcome() {
-        return "success";  // 默认使用了请求转发的跳转方式
+        return "success";  // 默认使用了请求转发的跳转方式 //除了String 还可以使用VieW  ,ModelAndView
     }
 
     @RequestMapping(value = "welcome1", method = RequestMethod.POST, params = {"name=xdz", "age!=23", "!height"})

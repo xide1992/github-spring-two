@@ -26,5 +26,12 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <!--加载国际化资源文件-->
+    <!--1.将ResourceBundleMessageSource在程序加载时加入mvc,springmvc在启动时会自动加载一个id="messageSource"的bean,如果有则自动加载-->
+    <!--2.ResourceBundleMessageSource在mvc响应是接入-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n.i18n"></property>
+    </bean>
+
 
 </beans>
