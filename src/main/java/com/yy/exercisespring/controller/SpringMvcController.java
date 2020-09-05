@@ -195,4 +195,20 @@ public class SpringMvcController {
     }
     //endregion
 
+    @RequestMapping(value = "testForwardRedirect")
+    public String testForward() {
+
+        //return "success";  // 默认使用了请求转发的跳转方式
+        //return "forward:/WEB-INF/views/success.jsp";
+        return "redirect:/views/success2.jsp"; //不能用WEB-INF下面的
+
+    }
+
+
+    @RequestMapping(value = "testMyConvert")
+    public String testMyConvert(@RequestParam("stu") Student student) {
+        System.out.println("student:" + JSON.toJSONString(student));
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
 }

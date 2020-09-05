@@ -76,5 +76,15 @@
     <input type="submit" value="testModelAttribute">  <br>
 </form>
 
+<a href="/spring/mvc/testMvcViewController"> first mvc testMvcViewController</a> <br>
+
+<a href="/spring/mvc/testForwardRedirect"> first mvc testForwardRedirect</a> <br>
+
+
+<form action="/spring/mvc/testMyConvert" method="post">
+    stu:<input name="stu" type="text">
+    <input type="submit" value="testMyConvert">  <br>
+</form>
+
 </body>
 </html>
