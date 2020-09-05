@@ -3,6 +3,7 @@ package com.yy.exercisespring.controller;
 import com.alibaba.fastjson.JSON;
 import com.yy.exercisespring.model.Address;
 import com.yy.exercisespring.model.Student;
+import com.yy.exercisespring.model.Teacher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -208,6 +209,12 @@ public class SpringMvcController {
     @RequestMapping(value = "testMyConvert")
     public String testMyConvert(@RequestParam("stu") Student student) {
         System.out.println("student:" + JSON.toJSONString(student));
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+    @RequestMapping(value = "testMyConvert2")
+    public String testMyConvert2(@RequestParam("tea") Teacher teacher) {
+        System.out.println("student:" + JSON.toJSONString(teacher));
         return "success";  // 默认使用了请求转发的跳转方式
     }
 

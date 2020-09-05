@@ -2,10 +2,12 @@ package com.yy.exercisespring.beans;
 
 
 import com.yy.exercisespring.common.MyConvert;
+import com.yy.exercisespring.common.MyConvert2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
+import org.springframework.core.convert.converter.Converter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,11 +19,15 @@ public class DependencyInjectionBeans {
     @Autowired
     private MyConvert myConvert;
 
+    @Autowired
+    private MyConvert2 myConvert2;
+
     @Bean("conversionService")
     public ConversionServiceFactoryBean getConversionServiceFactoryBean() {
         ConversionServiceFactoryBean conversionServiceFactoryBean = new ConversionServiceFactoryBean();
-        Set<MyConvert> converters = new HashSet<>();
+        Set<Converter> converters = new HashSet<>();
         converters.add(myConvert);
+        converters.add(myConvert2);
         conversionServiceFactoryBean.setConverters(converters);
         return conversionServiceFactoryBean;
     }

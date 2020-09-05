@@ -86,5 +86,10 @@
     <input type="submit" value="testMyConvert">  <br>
 </form>
 
+<form action="/spring/mvc/testMyConvert2" method="post">
+    tea:<input name="tea" type="text">
+    <input type="submit" value="testMyConvert2">  <br>
+</form>
+
 </body>
 </html>
