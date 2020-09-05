@@ -30,14 +30,14 @@
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
 
     <!--1.将自定义转换器纳入ioc-->
-    <bean id="myConvert" class="com.yy.exercisespring.common.MyConvert"></bean>
+<!--    <bean id="myConvert" class="com.yy.exercisespring.common.MyConvert"></bean>-->
 
-    <!--2.将myConvert再纳入StringMvc提供的转换器bean-->
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
-            <set><ref bean="myConvert"></ref></set>
-        </property>
-    </bean>
+<!--    &lt;!&ndash;2.将myConvert再纳入StringMvc提供的转换器bean&ndash;&gt;-->
+<!--    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+<!--        <property name="converters">-->
+<!--            <set><ref bean="myConvert"></ref></set>-->
+<!--        </property>-->
+<!--    </bean>-->
     <!--3.将conversionService注册到annotation-driven-->
 
     <!-- 配置视图解析器（InternalResourceViewResolver）-->

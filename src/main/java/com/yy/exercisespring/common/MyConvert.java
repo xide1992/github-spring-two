@@ -3,8 +3,9 @@ package com.yy.exercisespring.common;
 import com.yy.exercisespring.model.Address;
 import com.yy.exercisespring.model.Student;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class MyConvert implements Converter<String, Student> {
     @Override
     public Student convert(String s) {//s:2-xdz-homeadd-schooladd
