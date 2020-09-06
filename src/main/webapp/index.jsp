@@ -51,9 +51,21 @@
 <form action="/spring/mvc/testObjectProperties" method="post">
     name:<input name="name" type="text">
     age:<input name="age" type="text">
+    birthday:<input name="birthday" type="text">
+    email:<input name="email" type="text">
     homeAddress:<input name="address.homeAddress" type="text">
     schoolAddress:<input name="address.schoolAddress" type="text">
     <input type="submit" value="testObjectProperties">  <br>
+</form>
+
+<form action="/spring/mvc/testHibernateValidator" method="post">
+    name:<input name="name" type="text">
+    age:<input name="age" type="text">
+    birthday:<input name="birthday" type="text">
+    email:<input name="email" type="text">
+    homeAddress:<input name="address.homeAddress" type="text">
+    schoolAddress:<input name="address.schoolAddress" type="text">
+    <input type="submit" value="testHibernateValidator">  <br>
 </form>
 
 <form action="/spring/mvc/testHttpServlet" method="post">

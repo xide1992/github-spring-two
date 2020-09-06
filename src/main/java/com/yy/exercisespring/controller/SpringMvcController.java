@@ -7,11 +7,14 @@ import com.yy.exercisespring.model.Teacher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -101,10 +104,43 @@ public class SpringMvcController {
     }
 
 
+    /**
+     * 参数位置不要调整 因为BindingResult result报错前一个参数的错误消息
+     * @param student
+     * @param result
+     * @param map
+     * @return
+     */
     @RequestMapping(value = "testObjectProperties", method = RequestMethod.POST)
-    public String testObjectProperties(Student student) {
+    public String testObjectProperties(Student student, BindingResult result,Map map) {
         System.out.println("student:" + JSON.toJSONString(student));
+        //BindingResult result 相当于tryCatch  ,页面上就不会报错
+        if(result.getErrorCount()>0) {
+            map.put("errors",result.getFieldErrors());
+            for (FieldError fieldError : result.getFieldErrors()) {
+                System.out.println("Error11:"+fieldError.getDefaultMessage());
+            }
+        }
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
 
+    /**
+     * 参数位置不要调整 因为BindingResult result报错前一个参数的错误消息
+     * @param student
+     * @param result
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "testHibernateValidator", method = RequestMethod.POST)
+    public String testHibernateValidator(@Valid  Student student, BindingResult result, Map map) {
+        System.out.println("student:" + JSON.toJSONString(student));
+        //BindingResult result 相当于tryCatch  ,页面上就不会报错
+        if(result.getErrorCount()>0) {
+            map.put("errors",result.getFieldErrors());
+            for (FieldError fieldError : result.getFieldErrors()) {
+                System.out.println("Error11:"+fieldError.getDefaultMessage());
+            }
+        }
         return "success";  // 默认使用了请求转发的跳转方式
     }
 
