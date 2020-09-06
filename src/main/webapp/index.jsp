@@ -1,5 +1,28 @@
 <html>
+<head>
+<script type="text/javascript" src="views/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#testJson").click(function () {
+                //通过ajax请求springmvc
+                $.post(
+                    "spring/mvc/testJson", <%--服务器地址--%>
+                    //{"name","xdz"} 参数
+                    function (result) {//服务器处理完毕后回调参数
+                        for(var i=0;i<result.length;i++)
+                        {
+                            alert(result[i].name+"_"+result[i].age+"_"+result[i].email+"_")
+                        }
+                    }
+
+                );
+            })
+        })
+    </script>
+</head>
+
 <body>
+<input type="button" value="testJson" id="testJson">
 <h2>Hello World!</h2>
 <a href="spring/mvc/welcome"> first mvc </a> <br>
 

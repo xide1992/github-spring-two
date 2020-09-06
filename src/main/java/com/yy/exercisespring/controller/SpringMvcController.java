@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -252,6 +254,16 @@ public class SpringMvcController {
     public String testMyConvert2(@RequestParam("tea") Teacher teacher) {
         System.out.println("student:" + JSON.toJSONString(teacher));
         return "success";  // 默认使用了请求转发的跳转方式
+    }
+
+    @ResponseBody  //告诉springMvc,此时不是返回一个view,而是一个返回值  
+    //需要引入    jackson-core   jackson-databind  jackson-annotations    jar
+    @RequestMapping(value = "testJson")
+    private List<Student> testJson() {
+        List<Student> students=new ArrayList<>();
+        students.add(new Student("xdz",11,"xxxx"));
+        students.add(new Student("xdz222",21,"22xxxx"));
+        return students;
     }
 
 }
