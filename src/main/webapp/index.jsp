@@ -1,6 +1,6 @@
 <html>
 <head>
-<script type="text/javascript" src="views/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="views/js/jquery-1.8.3.js"></script><%--js与views平级不能访问???--%>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#testJson").click(function () {
