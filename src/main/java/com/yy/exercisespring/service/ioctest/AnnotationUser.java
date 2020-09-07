@@ -4,6 +4,7 @@ import com.yy.exercisespring.annotation.GlobalLog;
 import com.yy.exercisespring.dao.ioctest.AnnotationUserBao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import javax.annotation.Resource;
 //@Controller("AnnotationUser")
 //@Service("AnnotationUser")
 //@Repository("AnnotationUser")
+//@Configuration("AnnotationUser")
 @Scope("singleton")
 public class AnnotationUser {
 
