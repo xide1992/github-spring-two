@@ -10,11 +10,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -265,5 +270,29 @@ public class SpringMvcController {
         students.add(new Student("xdz222",21,"22xxxx"));
         return students;
     }
+
+
+    @RequestMapping(value = "testUpload")
+    public String testUpload(@RequestParam("desc") String desc, @RequestParam("file") MultipartFile file) throws IOException {
+        System.out.println("文件描述信息:" + desc);
+        InputStream inputStream = file.getInputStream();
+
+        String fileName = file.getOriginalFilename();
+        OutputStream outputStream = new FileOutputStream("D:\\"+fileName);
+
+        byte[] bytes = new byte[1024];
+        int len = -1;
+        while ((len = inputStream.read(bytes)) != -1) {
+            outputStream.write(bytes, 0, len);
+        }
+        outputStream.close();
+        inputStream.close();
+
+        System.out.printf("上传成功");
+        return "success";
+
+    }
+
+
 
 }

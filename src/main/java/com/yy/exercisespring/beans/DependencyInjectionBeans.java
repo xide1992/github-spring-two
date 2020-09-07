@@ -1,4 +1,6 @@
 package com.yy.exercisespring.beans;
+import javax.servlet.ServletContext;
+import org.springframework.core.io.Resource;
 
 
 import com.yy.exercisespring.common.MyConvert;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -52,5 +55,25 @@ public class DependencyInjectionBeans {
         converters.add(myConvert2);
         conversionServiceFactoryBean.setConverters(converters);
         return conversionServiceFactoryBean;
+    }
+
+    /**
+     * 文件上传      ,名称必须为 multipartResolver
+     * @return
+     */
+    @Bean("multipartResolver")
+    public CommonsMultipartResolver getCommonsMultipartResolver() {
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+//        commonsMultipartResolver.setResolveLazily(false);
+//        commonsMultipartResolver.setServletContext(new ServletContext());
+        commonsMultipartResolver.setMaxUploadSize(1024 * 1024 * 1024);//上传文件大小,单位字节,-1表示无穷大
+//        commonsMultipartResolver.setMaxUploadSizePerFile(0L);
+        commonsMultipartResolver.setMaxInMemorySize(0);//内存开辟空间最大值
+        commonsMultipartResolver.setDefaultEncoding("UTF-8");//文件编码
+//        commonsMultipartResolver.setUploadTempDir(new Resource());
+//        commonsMultipartResolver.setPreserveFilename(false);
+
+
+        return commonsMultipartResolver;
     }
 }
