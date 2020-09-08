@@ -40,6 +40,27 @@
 <!--    </bean>-->
     <!--3.将conversionService注册到annotation-driven-->
 
+    <!--将自己写的拦截器配置到springmvc中-->
+    <mvc:interceptors>
+        <!--拦截全部请求-->
+        <!--<bean class="com.yy.exercisespring.common.interceptor.MyInterceptor"></bean>-->
+        <!--配置具体的拦截路径  取交集-->
+        <mvc:interceptor>
+            <!--指定拦截的路径 基于ant风格-->
+            <mvc:mapping path="/**"/>
+            <!--指定不拦截的路径-->
+            <mvc:exclude-mapping path="/spring/mvc/testMyConvert2"/>
+            <bean class="com.yy.exercisespring.common.interceptor.MyInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <!--指定拦截的路径 基于ant风格-->
+            <mvc:mapping path="/**"/>
+            <!--指定不拦截的路径-->
+            <mvc:exclude-mapping path="/spring/mvc/testMyConvert2"/>
+            <bean class="com.yy.exercisespring.common.interceptor.MySecondInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- 配置视图解析器（InternalResourceViewResolver）-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"></property><!--不能写成WEB-INF/views/-->
