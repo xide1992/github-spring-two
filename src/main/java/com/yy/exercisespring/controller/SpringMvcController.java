@@ -293,6 +293,13 @@ public class SpringMvcController {
 
     }
 
+    @RequestMapping(value = "testException")
+    public String testException() {
+        int i = 1 / 0;
+        System.out.println("testException");
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
 
 
 }

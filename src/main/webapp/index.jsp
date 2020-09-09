@@ -132,5 +132,7 @@
     <input type="submit" value="上传">  <br>
 </form>
 
+<a href="/spring/mvc/testException"> first mvc testException</a> <br>
+
 </body>
 </html>
