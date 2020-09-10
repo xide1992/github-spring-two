@@ -151,6 +151,17 @@ public class SpringMvcController {
         return "success";  // 默认使用了请求转发的跳转方式
     }
 
+    /**
+     * 参数位置不要调整 因为BindingResult result报错前一个参数的错误消息
+     * @param student
+     * @return
+     */
+    @RequestMapping(value = "testHibernateValidatorNoBindingResult", method = RequestMethod.POST)
+    public String testHibernateValidatorNoBindingResult(@Valid  Student student) {
+        System.out.println("student:" + JSON.toJSONString(student));
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
 
     @RequestMapping(value = "testHttpServlet")
     public String testHttpServlet(HttpServletRequest request, HttpServletResponse response) {

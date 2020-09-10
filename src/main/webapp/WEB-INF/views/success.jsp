@@ -18,6 +18,8 @@
 <h2>${requestScope.student.name}  - ${requestScope.student.age}</h2>
 <h1>sessionScope</h1>
 <h2>${sessionScope.student.name}  - ${sessionScope.student.age}</h2>
+<h1>exception</h1>
+<h2>${requestScope.ex}</h2>
 <c:forEach items="${requestScope.errors}" var="error">
     <%--var="error" 每一项元素--%>
     ${error.getDefaultMessage()} <br>
