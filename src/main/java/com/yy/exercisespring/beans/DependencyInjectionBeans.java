@@ -1,4 +1,5 @@
 package com.yy.exercisespring.beans;
+import java.util.Properties;
 import javax.servlet.ServletContext;
 import org.springframework.core.io.Resource;
 
@@ -12,6 +13,7 @@ import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -76,4 +78,26 @@ public class DependencyInjectionBeans {
 
         return commonsMultipartResolver;
     }
+
+
+    /**
+     * 以配置的方式处理异常
+     *  @ExceptionHandler 优先级比此功能高, 需要先将 @ExceptionHandler  注释掉
+     * @return
+     */
+    @Bean
+    public SimpleMappingExceptionResolver getSimpleMappingExceptionResolver() {
+        SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
+
+        Properties properties = new Properties();
+        properties.put("java.lang.ArithmeticException", "error");
+        properties.put("java.lang.NullPointerException", "error");
+
+        simpleMappingExceptionResolver.setExceptionMappings(properties);
+        simpleMappingExceptionResolver.setExceptionAttribute("ex");//把抛的异常ex放在requestScope  ,如果不写默认放在exception
+        return simpleMappingExceptionResolver;
+
+
+    }
+
 }

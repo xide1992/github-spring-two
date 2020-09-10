@@ -134,5 +134,7 @@
 
 <a href="/spring/mvc/testException"> first mvc testException</a> <br>
 
+<a href="/spring/mvc/testSimpleMappingException"> first mvc testSimpleMappingException</a> <br>
+
 </body>
 </html>

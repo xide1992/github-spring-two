@@ -300,6 +300,14 @@ public class SpringMvcController {
         return "success";  // 默认使用了请求转发的跳转方式
     }
 
+    @RequestMapping(value = "testSimpleMappingException")
+    public String testSimpleMappingException() {
+        Student student = null;
+        student.getAddress();
+        System.out.println("testException");
+        return "success";  // 默认使用了请求转发的跳转方式
+    }
+
 
 
 }
