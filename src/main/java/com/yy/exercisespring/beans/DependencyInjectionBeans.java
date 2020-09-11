@@ -44,7 +44,7 @@ public class DependencyInjectionBeans {
 //    }
 
     /**
-     * 配置格式化所依赖的bean
+     * 配置数据格式化所依赖的bean     @NumberFormat(pattern = "###,#")  @DateTimeFormat(pattern = "yyyy-MM-dd")  生效
      * FormattingConversionServiceFactoryBean 包含了ConversionServiceFactoryBean的功能
      *
      * @return
