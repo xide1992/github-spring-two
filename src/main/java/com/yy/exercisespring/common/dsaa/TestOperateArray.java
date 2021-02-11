@@ -13,20 +13,26 @@ public class TestOperateArray {
 
         //int[] arr = new int[3];
 
-        int[] arr = new int[]{1, 2, 3, 4};
+        int[] arr = new int[]{1, 2, 3, 4, 6, 8, 9, 11, 23};
 
         System.out.println(Arrays.toString(arr));
 
-        arr = add(7, arr.length, arr);
-        System.out.println(Arrays.toString(arr));
+//        arr = add(7, arr.length, arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//        arr = remove(2, arr);
+//        System.out.println(Arrays.toString(arr));
 
-        arr = remove(2, arr);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println("index:"+searchIndex(9,arr));
+//        System.out.println("index:"+searchIndex(4,arr));
+
+        System.out.println("index:" + binarySearchIndex(24, arr, 0, arr.length - 1));
 
     }
 
     /**
      * 添加元素
+     *
      * @param value
      * @param index
      * @param oldArr
@@ -49,6 +55,7 @@ public class TestOperateArray {
 
     /**
      * 删除元素
+     *
      * @param index
      * @param oldArr
      * @return
@@ -64,5 +71,51 @@ public class TestOperateArray {
         }
 
         return newArr;
+    }
+
+
+    /**
+     * 线性查找
+     *
+     * @param value
+     * @param arr
+     * @return
+     */
+    private static int searchIndex(int value, int[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (value == arr[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    /**
+     * 二分查找  要求数组必须是有序的
+     *
+     * @param value
+     * @param arr
+     * @return
+     */
+    private static int binarySearchIndex(int value, int[] arr, int indexStart, int indexEnd) {
+        //当开始下标与结束下标重合,说明没有查找到
+        if (indexStart >= indexEnd) {
+            return -1;
+        }
+
+        int middle = (indexStart + indexEnd) / 2;
+
+        if (value == arr[middle]) {
+            return middle;
+        } else if (value < arr[middle]) {
+            //把结束位置调整到中间位置的前一个位置
+            return binarySearchIndex(value, arr, indexStart, middle - 1);
+        } else {
+            //把开始位置调整到中间位置的下一个位置
+            return binarySearchIndex(value, arr, middle + 1, indexEnd);
+        }
+
     }
 }
