@@ -9,13 +9,31 @@ import java.util.Arrays;
  */
 public class TestOperateArray {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        //int[] arr = new int[3];
+        MyArray array = new MyArray();
+        System.out.println(array.size());
+        array.addSuffix(11);
+        array.addSuffix(31);
+        array.addSuffix(41);
+        array.addSuffix(51);
+        array.addSuffix(61);
+        array.addSuffix(71);
+        array.add(3, 33);
+        //array.delete(5);
+        System.out.println(array.size());
+        System.out.println(array.getElement(3));
 
-        int[] arr = new int[]{1, 2, 3, 4, 6, 8, 9, 11, 23};
+        System.out.println("search:" + array.searchIndex(61));
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println("binarySearch:" + array.binarySearchIndex(61, 0, array.size() - 1));
+        array.print();
+
+//        int[] arr = new int[3];
+
+//        int[] arr = new int[]{1, 2, 3, 4, 6, 8, 9, 11, 23};
+//
+//        System.out.println(Arrays.toString(arr));
 
 //        arr = add(7, arr.length, arr);
 //        System.out.println(Arrays.toString(arr));
@@ -26,7 +44,7 @@ public class TestOperateArray {
 //        System.out.println("index:"+searchIndex(9,arr));
 //        System.out.println("index:"+searchIndex(4,arr));
 
-        System.out.println("index:" + binarySearchIndex(24, arr, 0, arr.length - 1));
+//        System.out.println("index:" + binarySearchIndex(24, arr, 0, arr.length - 1));
 
     }
 
